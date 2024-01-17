@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prayer Attendance</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #d4f7dc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #prayerContainer {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .name-input {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .mark-button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="prayerContainer">
+    <h1>Prayer Attendance</h1>
+    <input type="text" class="name-input" placeholder="Enter student name" id="studentName">
+    <button class="mark-button" onclick="markAttendance()">Mark Attendance</button>
+  </div>
+
+  <script>
+    function markAttendance() {
+      const studentName = document.getElementById('studentName').value;
+      if (studentName.trim() !== '') {
+        // Perform attendance recording logic here (could be stored in an array, etc.)
+        alert(`Student ${studentName} is present in all namaz`);
+
+        // Send email (not possible from frontend directly, needs server-side logic)
+        // Example: sendEmail('khanmujahidulislam12@gmail.com', `Student ${studentName} is present in all namaz`);
+
+        // Redirect back to the attendance page
+        window.location.href = "index.html";
+      }
+    }
+
+    // Function to send email (server-side logic required)
+    function sendEmail(receiverEmail, message) {
+      // Simulate sending email, in reality, this requires server-side logic
+      console.log(`Sending email to ${receiverEmail}: ${message}`);
+    }
+  </script>
+</body>
+</html>
